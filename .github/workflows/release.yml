@@ -3,6 +3,9 @@ name: Fastlane Release
 on:
   push:
     branches: [ main ]
+
+permissions: write-all
+
 concurrency: 
   group: ${{ github.ref }}
   cancel-in-progress: true
