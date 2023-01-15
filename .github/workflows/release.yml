@@ -26,7 +26,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: Pods
-          key: ${{ runner.os }}-Pods-${{ hashFiles('./yarn.lock') }}
+          key: ${{ runner.os }}-Pods-${{ hashFiles('./Podfile.lock') }}
 
 
       - uses: maierj/fastlane-action@v3.0.0
