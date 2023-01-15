@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00034">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: cocoapods" time="1.70221">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: gym" time="32.738954">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
