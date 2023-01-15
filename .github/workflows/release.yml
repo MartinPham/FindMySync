@@ -6,6 +6,8 @@ on:
 concurrency: 
   group: ${{ github.ref }}
   cancel-in-progress: true
+
+
 jobs:
   build:
     name: Release MacOS app with Fastlane
@@ -34,10 +36,12 @@ jobs:
           lane: 'release'
       
       - run: |
-          tar -zcf release.tar.gz build
+          tar -zcf prerelease.tar.gz build
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
           files: |
-            release.tar.gz
+            prerelease.tar.gz
