@@ -169,7 +169,7 @@ struct SidebarView: View {
                                         log("- - Battery level: " + battery.stringValue)
                                         updateEntity(id: id, latitude: latitude, longitude: longitude, accuracy: accuracy, battery: battery)
                                     } else {
-                                        log("- - No battery level provide")
+                                        log("- - No battery level provided")
                                         updateEntity(id: id, latitude: latitude, longitude: longitude, accuracy: accuracy, battery: -1)
                                     }
                                 } else {
