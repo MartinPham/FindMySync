@@ -5,17 +5,27 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00034">
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000472">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: cocoapods" time="1.70221">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000413">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: gym" time="32.738954">
+      <testcase classname="fastlane.lanes" name="2: cocoapods" time="3.026576">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: gym" time="31.848538">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: dmg" time="6.125423">
         
       </testcase>
     

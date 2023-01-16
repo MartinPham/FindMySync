@@ -103,6 +103,8 @@ struct SidebarView: View {
                 
                 do {
                     findmyBookmark = try url.bookmarkData(options: .minimalBookmark, includingResourceValuesForKeys: nil, relativeTo: nil)
+                    
+                    fetchData()
                 } catch {
                     log("Bookmark error \(error)")
                 }

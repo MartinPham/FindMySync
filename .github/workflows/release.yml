@@ -45,4 +45,5 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            build/FindMySync.dmg
+            build/FindMySync.app.dmg
+            README.md
