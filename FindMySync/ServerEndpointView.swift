@@ -70,7 +70,8 @@ struct ServerEndpointView: View {
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
                     TextField("...", text: $value)
                         .font(.system(.title, design: .rounded))
-//                        .fontWeight(.semibold).textFieldStyle(PlainTextFieldStyle())
+//                        .fontWeight(.semibold)
+                        .textFieldStyle(PlainTextFieldStyle())
                     Spacer()
                 }
             }
