@@ -38,8 +38,6 @@ jobs:
         with:
           lane: 'release'
       
-      - run: |
-          tar -zcf prerelease.tar.gz build
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -47,4 +45,4 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            prerelease.tar.gz
+            build/FindMySync.dmg

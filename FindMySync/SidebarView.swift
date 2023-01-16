@@ -7,17 +7,22 @@
 
 import SwiftUI
 import AXSwift
+import UniformTypeIdentifiers
 
 struct SidebarView: View {
     @State var selection: Screen? = .home
     @State var logs = ""
     @State var timer: Timer?
     
+    @AppStorage("bookmarkData") var findmyBookmark: Data?
+    
+    @State private var directoryDialogShowing = false
+    @State private var fileAccessDialogShowing = false
+    
     func log(_ message: String) {
         debugPrint(message)
         self.logs += message + "\n"
     }
-    
     var body: some View {
         NavigationView {
             List {
@@ -71,7 +76,41 @@ struct SidebarView: View {
             HomeView {
                 selection = .endpoint
             }
-        }.onAppear(perform: onAppear)
+        }
+        .onAppear(perform: onAppear)
+        .confirmationDialog("Ops! I can't read FindMy data", isPresented: $fileAccessDialogShowing) {
+            Button("Grant permissions") {
+                fileAccessDialogShowing = false
+                directoryDialogShowing = true
+            }
+            Button("Help") {
+                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
+            }
+            Button("Cancel", role: .cancel) {
+                fileAccessDialogShowing = false
+            }
+        } message: {
+            Text("Please give me permessions to access ~/Library/Caches/com.apple.findmy.fmipcore")
+        }
+        .fileImporter(isPresented: $directoryDialogShowing, allowedContentTypes: [UTType.folder]) { result in
+            switch result {
+            case .success(let url):
+                guard url.startAccessingSecurityScopedResource() else {
+                    return
+                }
+                
+                defer { url.stopAccessingSecurityScopedResource() }
+                
+                do {
+                    findmyBookmark = try url.bookmarkData(options: .minimalBookmark, includingResourceValuesForKeys: nil, relativeTo: nil)
+                } catch {
+                    log("Bookmark error \(error)")
+                }
+            case .failure(let error):
+                log("Importer error: \(error)")
+            }
+            directoryDialogShowing = false
+        }
     }
     
     func onAppear() {
@@ -113,6 +152,8 @@ struct SidebarView: View {
         let homeDirectory = URL(fileURLWithPath: NSHomeDirectory())
         log("Home directory: " + homeDirectory.absoluteString)
         
+        var hasAccess = true
+        
         if items {
             let itemsJsonFile = homeDirectory.appending(path: "Library/Caches/com.apple.findmy.fmipcore/Items.data")
             log("Items file: " + itemsJsonFile.absoluteString)
@@ -143,6 +184,7 @@ struct SidebarView: View {
                 }
             } catch {
                 log("Cannot read Items file:" + error.localizedDescription);
+                hasAccess = false
             }
         }
         
@@ -183,7 +225,12 @@ struct SidebarView: View {
                 }
             } catch {
                 log("Cannot read Items file:" + error.localizedDescription);
+                hasAccess = false
             }
+        }
+        
+        if !hasAccess {
+            fileAccessDialogShowing = true
         }
         
         

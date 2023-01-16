@@ -40,6 +40,16 @@ struct HomeView: View {
             Spacer()
             
         }
+        .toolbar {
+            Button(action: {
+                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
+            }) {
+                HStack {
+                    Image(systemName: "questionmark.circle")
+                    Text("Help")
+                }
+            }
+        }
     }
 }
 

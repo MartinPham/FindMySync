@@ -26,5 +26,7 @@ platform :mac do
       skip_codesigning: true,
       output_directory: "build"
     )
+
+    dmg(path: "build/FindMySync.app")
   end
 end
