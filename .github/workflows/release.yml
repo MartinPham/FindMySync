@@ -46,4 +46,3 @@ jobs:
           title: "Development Build"
           files: |
             build/FindMySync.app.dmg
-            README.md
