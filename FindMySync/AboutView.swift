@@ -45,7 +45,7 @@ struct AboutView: View {
                         .multilineTextAlignment(.center)
                     Text("Interested? Check my stuffs here")
                         .multilineTextAlignment(.center)
-                        .bold()
+//                        .bold()
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     HStack {
                         Link(destination: URL(string: "https://www.martinpham.com")!) {

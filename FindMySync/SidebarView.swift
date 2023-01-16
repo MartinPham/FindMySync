@@ -157,7 +157,8 @@ struct SidebarView: View {
         var hasAccess = true
         
         if items {
-            let itemsJsonFile = homeDirectory.appending(path: "Library/Caches/com.apple.findmy.fmipcore/Items.data")
+            let itemsJsonFile = homeDirectory.appendingPathComponent("Library/Caches/com.apple.findmy.fmipcore/Items.data")
+            
             log("Items file: " + itemsJsonFile.absoluteString)
             
             do {
@@ -192,7 +193,7 @@ struct SidebarView: View {
         
         
         if devices {
-            let devicesJsonFile = homeDirectory.appending(path: "Library/Caches/com.apple.findmy.fmipcore/Devices.data")
+            let devicesJsonFile = homeDirectory.appendingPathComponent("Library/Caches/com.apple.findmy.fmipcore/Devices.data")
             log("Devices file: " + devicesJsonFile.absoluteString)
             
             do {
