@@ -9,16 +9,22 @@ import SwiftUI
 
 struct StatusView: View {
     @Binding var logs: String
-    var onForceUpdateClick: () -> Void
     
     var body: some View {
-        VStack {
-            Text(logs)
-        }
+        GeometryReader { geometry in
+                    ScrollView {
+                        Text(logs)
+                            .font(.custom("Courier", size: 14))
+                            .textSelection(.enabled)
+                            .lineSpacing(12)
+                            .lineLimit(nil)
+                            .frame(width: geometry.size.width)
+                    }
+                }
         .padding()
         .toolbar {
             Button(action: {
-                onForceUpdateClick()
+                Synchronizer.shared.fetchData()
             }) {
                 HStack {
                     Image(systemName: "bolt")

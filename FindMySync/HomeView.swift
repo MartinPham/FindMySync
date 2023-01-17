@@ -40,6 +40,8 @@ struct HomeView: View {
             Spacer()
             
         }
+        
+        .navigationTitle(title())
         .toolbar {
             Button(action: {
                 NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
@@ -50,6 +52,13 @@ struct HomeView: View {
                 }
             }
         }
+    }
+    
+    func title() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        return "FindMySync (version \(version)-\(build))"
     }
 }
 

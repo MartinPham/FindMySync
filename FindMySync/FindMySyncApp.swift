@@ -13,7 +13,7 @@ struct FindMySyncApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SidebarView()
+            AppView()
         }
     }
     
@@ -23,10 +23,11 @@ struct FindMySyncApp: App {
             defaults: [
                 "sources_devices": true,
                 "sources_items": true,
-                "sources_hideapp": true,
                 "endpoint_url": "http://homeassistant.local:8123/api/services/device_tracker/see",
                 "endpoint_auth": "Bearer <INSERT TOKEN HERE>",
-                "endpoint_interval": "5",
+                "extra_interval": "5",
+                "extra_hide_findmy_app": false,
+                "extra_generate_config": false,
             ]
         )
     }

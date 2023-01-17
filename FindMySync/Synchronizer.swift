@@ -1,145 +1,58 @@
 //
-//  SidebarView.swift
+//  Synchronizer.swift
 //  FindMySync
 //
-//  Created by ZZZ on 11/01/23.
+//  Created by ZZZ on 17/01/23.
 //
 
-import SwiftUI
+import Foundation
 import AXSwift
 import UniformTypeIdentifiers
 
-struct SidebarView: View {
-    @State var selection: Screen? = .home
-    @State var logs = ""
-    @State var timer: Timer?
+class Synchronizer {
+    var log: (_ message: String) -> Void
+    var clearLog: () -> Void
+    var onAccessDenied: () -> Void
+    var timer: Timer?
     
-    @AppStorage("bookmarkData") var findmyBookmark: Data?
-    
-    @State private var directoryDialogShowing = false
-    @State private var fileAccessDialogShowing = false
-    
-    func log(_ message: String) {
-        debugPrint(message)
-        self.logs += message + "\n"
-    }
-    var body: some View {
-        NavigationView {
-            List {
-                Text("SYNCHRONIZATION")
-                    .font(.system(size: 10))
-                    .fontWeight(.bold)
-                Group{
-                    NavigationLink(destination: HomeView(onDiscoverClick: {
-                        selection = .status
-                    }), tag: Screen.home, selection: $selection) {
-                        Label("Home", systemImage: "house")
-                    }
-                    NavigationLink(destination: StatusView(logs: $logs, onForceUpdateClick: {
-                        fetchData()
-                    }), tag: Screen.status, selection: $selection) {
-                        Label("Status", systemImage: "text.bubble")
-                    }
-                }
-                Divider()
-                
-                
-                Text("SETTINGS")
-                    .font(.system(size: 10))
-                    .fontWeight(.bold)
-                Group {
-                    NavigationLink(destination: DatasourcesView(), tag: Screen.data, selection: $selection) {
-                        Label("Data", systemImage: "rectangle.stack")
-                    }
-                    NavigationLink(destination: ServerEndpointView(), tag: Screen.endpoint, selection: $selection) {
-                        Label("Endpoint", systemImage: "globe")
-                    }
-                }
-                
-                
-                Divider()
-                NavigationLink(destination: AboutView(), tag: Screen.about, selection: $selection) {
-                    Label("About", systemImage: "star")
-                }
-            }
-            
-            .listStyle(SidebarListStyle())
-            .frame(minWidth: 100, idealWidth: 100, maxWidth: 300)
-            .toolbar {
-                ToolbarItem(placement: .navigation) {
-                    Button(action: toggleSidebar, label: {
-                        Image(systemName: "sidebar.left")
-                    })
-                }
-            }
-            
-            HomeView {
-                selection = .endpoint
-            }
+    static let shared = Synchronizer(
+        log: { message in
+            debugPrint(message)
+        },
+        clearLog: {
+            debugPrint("========")
+        },
+        onAccessDenied: {
+            debugPrint("ACCESS DENIED")
         }
-        .onAppear(perform: onAppear)
-        .confirmationDialog("Ops! I can't read FindMy data", isPresented: $fileAccessDialogShowing) {
-            Button("Grant permissions") {
-                fileAccessDialogShowing = false
-                directoryDialogShowing = true
-            }
-            Button("Help") {
-                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
-            }
-            Button("Cancel", role: .cancel) {
-                fileAccessDialogShowing = false
-            }
-        } message: {
-            Text("Please give me permessions to access ~/Library/Caches/com.apple.findmy.fmipcore")
-        }
-        .fileImporter(isPresented: $directoryDialogShowing, allowedContentTypes: [UTType.folder]) { result in
-            switch result {
-            case .success(let url):
-                guard url.startAccessingSecurityScopedResource() else {
-                    return
-                }
-                
-                defer { url.stopAccessingSecurityScopedResource() }
-                
-                do {
-                    findmyBookmark = try url.bookmarkData(options: .minimalBookmark, includingResourceValuesForKeys: nil, relativeTo: nil)
-                    
-                    fetchData()
-                } catch {
-                    log("Bookmark error \(error)")
-                }
-            case .failure(let error):
-                log("Importer error: \(error)")
-            }
-            directoryDialogShowing = false
-        }
-    }
+    )
     
-    func onAppear() {
-        
-        
-        
-        fetchData()
+    public init(log: @escaping (_ message: String) -> Void, clearLog: @escaping () -> Void, onAccessDenied: @escaping () -> Void) {
+        self.log = log
+        self.clearLog = clearLog
+        self.onAccessDenied = onAccessDenied
     }
     
     func fetchData() {
+        clearLog()
         
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        logs = dateFormatter.string(from: date) + "\n"
+        log(dateFormatter.string(from: date) + "\n")
         
         log(Bundle.main.bundlePath)
         
         let items: Bool = UserDefaults.standard.bool(forKey: "sources_items")
         let devices: Bool = UserDefaults.standard.bool(forKey: "sources_devices")
-        let sources_hideapp: Bool = UserDefaults.standard.bool(forKey: "sources_hideapp")
+        let hide_findmy_app: Bool = UserDefaults.standard.bool(forKey: "extra_hide_findmy_app")
+        let generate_config: Bool = UserDefaults.standard.bool(forKey: "extra_generate_config")
         
-        if sources_hideapp {
-            if UIElement.isProcessTrusted(withPrompt: true) {
+        if hide_findmy_app {
+            if UIElement.isProcessTrusted() {
                 if let app = Application.allForBundleID("com.apple.findmy").first {
-                    log("Found FindMy app")
+                    log("Found FindMy app, gonna hide it")
                     do {
                         try app.setAttribute(.hidden, value: true)
                     } catch {
@@ -147,7 +60,7 @@ struct SidebarView: View {
                     }
                 }
             } else {
-                log("No accessibility API permission")
+                log("Cannot hide FindMy app because Accessibility API permission was not granted")
             }
         }
         
@@ -155,6 +68,7 @@ struct SidebarView: View {
         log("Home directory: " + homeDirectory.absoluteString)
         
         var hasAccess = true
+        var haConfig = ""
         
         if items {
             let itemsJsonFile = homeDirectory.appendingPathComponent("Library/Caches/com.apple.findmy.fmipcore/Items.data")
@@ -168,14 +82,27 @@ struct SidebarView: View {
                     log("Got " + String(jsonResult.count) + " item(s):");
                     for item in jsonResult {
                         if let id = item["identifier"] as? String {
-                            log("- Item " + id);
+                            let name = item["name"] as! String
+                            log("- Item \"" + name + "\" - " + id);
                             if let location = item["location"] as? [String: Any] {
                                 if let latitude = location["latitude"] as? NSNumber,
                                    let longitude = location["longitude"] as? NSNumber,
                                    let accuracy = location["horizontalAccuracy"] as? NSNumber {
-                                    log("- - Location: " + latitude.stringValue + ", " + longitude.stringValue + " (" + accuracy.stringValue + ")")
+                                    log("- - Location: " + latitude.stringValue + ", " + longitude.stringValue + " (Accuracy " + accuracy.stringValue + ")")
                                     
                                     updateEntity(id: id, latitude: latitude, longitude: longitude, accuracy: accuracy, battery: -1)
+                                    
+                                    if generate_config {
+                                        haConfig += """
+findmy_\(id.replacingOccurrences(of: "-", with: "")):
+  name: "\(name)"
+  mac: FINDMY_\(id)
+  icon:
+  picture:
+  track: true
+
+"""
+                                    }
                                 } else {
                                     log("- - No latitude/longitude/accuracy provided");
                                 }
@@ -203,12 +130,13 @@ struct SidebarView: View {
                     log("Got " + String(jsonResult.count) + " item(s):");
                     for item in jsonResult {
                         if let id = item["baUUID"] as? String {
-                            log("- Item " + id);
+                            let name = item["name"] as! String
+                            log("- Item \"" + name + "\" - " + id);
                             if let location = item["location"] as? [String: Any] {
                                 if let latitude = location["latitude"] as? NSNumber,
                                    let longitude = location["longitude"] as? NSNumber,
                                    let accuracy = location["horizontalAccuracy"] as? NSNumber {
-                                    log("- - Location: " + latitude.stringValue + ", " + longitude.stringValue + " (" + accuracy.stringValue + ")")
+                                    log("- - Location: " + latitude.stringValue + ", " + longitude.stringValue + " (Accuracy " + accuracy.stringValue + ")")
                                     
                                     if let battery = item["batteryLevel"] as? NSNumber {
                                         log("- - Battery level: " + battery.stringValue)
@@ -216,6 +144,18 @@ struct SidebarView: View {
                                     } else {
                                         log("- - No battery level provided")
                                         updateEntity(id: id, latitude: latitude, longitude: longitude, accuracy: accuracy, battery: -1)
+                                    }
+                                    
+                                    if generate_config {
+                                        haConfig += """
+findmy_\(id.replacingOccurrences(of: "-", with: "")):
+  name: "\(name)"
+  mac: FINDMY_\(id)
+  icon:
+  picture:
+  track: true
+
+"""
                                     }
                                 } else {
                                     log("- - No latitude/longitude/accuracy provided");
@@ -233,18 +173,28 @@ struct SidebarView: View {
         }
         
         if !hasAccess {
-            fileAccessDialogShowing = true
+            onAccessDenied()
+        } else {
+            if generate_config {
+                log("")
+                log("------ known_devices.yaml ------")
+                log(haConfig)
+                log("--------------------------------")
+                log("")
+            }
         }
         
         
-        let interval: String = UserDefaults.standard.string(forKey: "endpoint_interval")!
+        
+        
+        let interval: String = UserDefaults.standard.string(forKey: "extra_interval")!
         log("Scheduling next update after " + interval + " minutes");
         
         if let currentTimer = timer {
             currentTimer.invalidate()
         }
         self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval)! * 60, repeats: false) { t in
-            fetchData()
+            self.fetchData()
         }
     }
     
@@ -280,18 +230,13 @@ struct SidebarView: View {
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             if (error == nil) {
                 let statusCode = (response as! HTTPURLResponse).statusCode
-                log("[" + id + "] Data sent: HTTP \(statusCode)")
+                self.log("[" + id + "] Data sent: HTTP \(statusCode)")
             }
             else {
-                log("[" + id + "] Data error: \(error!.localizedDescription)");
+                self.log("[" + id + "] Data error: \(error!.localizedDescription)");
             }
         })
         task.resume()
         session.finishTasksAndInvalidate()
     }
-}
-
-// Toggle Sidebar Function
-func toggleSidebar() {
-        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }

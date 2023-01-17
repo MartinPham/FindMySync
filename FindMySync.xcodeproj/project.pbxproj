@@ -11,7 +11,7 @@
 		5E6D16F3296EA7C8002DC74A /* FindMySyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D16F2296EA7C8002DC74A /* FindMySyncApp.swift */; };
 		5E6D16F7296EA7CA002DC74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D16F6296EA7CA002DC74A /* Assets.xcassets */; };
 		5E6D16FA296EA7CA002DC74A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D16F9296EA7CA002DC74A /* Preview Assets.xcassets */; };
-		5E6D1702296EA86F002DC74A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1701296EA86F002DC74A /* SidebarView.swift */; };
+		5E6D1702296EA86F002DC74A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1701296EA86F002DC74A /* AppView.swift */; };
 		5E6D1704296EA8B7002DC74A /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1703296EA8B7002DC74A /* Screen.swift */; };
 		5E6D1706296EA8DE002DC74A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1705296EA8DE002DC74A /* HomeView.swift */; };
 		5E6D1708296EAD12002DC74A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1707296EAD12002DC74A /* AboutView.swift */; };
@@ -19,6 +19,9 @@
 		5E6D170E296EB19E002DC74A /* DatasourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D170D296EB19E002DC74A /* DatasourcesView.swift */; };
 		5E6D1710296EB1B2002DC74A /* ServerEndpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */; };
 		5E6D1712296F2A05002DC74A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1711296F2A05002DC74A /* AppDelegate.swift */; };
+		5ED2AA762976F7D400BA9EA3 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA752976F7D400BA9EA3 /* Controls.swift */; };
+		5ED2AA782976F8A400BA9EA3 /* ExtrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */; };
+		5ED2AA7A2976FC7700BA9EA3 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,7 @@
 		5E6D16F6296EA7CA002DC74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E6D16F9296EA7CA002DC74A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5E6D16FB296EA7CA002DC74A /* FindMySync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindMySync.entitlements; sourceTree = "<group>"; };
-		5E6D1701296EA86F002DC74A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		5E6D1701296EA86F002DC74A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		5E6D1703296EA8B7002DC74A /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		5E6D1705296EA8DE002DC74A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5E6D1707296EAD12002DC74A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -37,6 +40,9 @@
 		5E6D170D296EB19E002DC74A /* DatasourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourcesView.swift; sourceTree = "<group>"; };
 		5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpointView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		5E6D1711296F2A05002DC74A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5ED2AA752976F7D400BA9EA3 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasView.swift; sourceTree = "<group>"; };
+		5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		DABEC7713A8DDB09DD8D1E13 /* Pods-FindMySync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMySync.debug.xcconfig"; path = "Target Support Files/Pods-FindMySync/Pods-FindMySync.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,12 +99,15 @@
 				5E6D1711296F2A05002DC74A /* AppDelegate.swift */,
 				5E6D16F2296EA7C8002DC74A /* FindMySyncApp.swift */,
 				5E6D1703296EA8B7002DC74A /* Screen.swift */,
-				5E6D1701296EA86F002DC74A /* SidebarView.swift */,
+				5E6D1701296EA86F002DC74A /* AppView.swift */,
 				5E6D1705296EA8DE002DC74A /* HomeView.swift */,
 				5E6D170B296EB182002DC74A /* StatusView.swift */,
 				5E6D170D296EB19E002DC74A /* DatasourcesView.swift */,
+				5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */,
 				5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */,
+				5ED2AA752976F7D400BA9EA3 /* Controls.swift */,
 				5E6D1707296EAD12002DC74A /* AboutView.swift */,
+				5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */,
 				5E6D16F6296EA7CA002DC74A /* Assets.xcassets */,
 				5E6D16FB296EA7CA002DC74A /* FindMySync.entitlements */,
 				5E6D16F8296EA7CA002DC74A /* Preview Content */,
@@ -231,12 +240,15 @@
 				5E6D170E296EB19E002DC74A /* DatasourcesView.swift in Sources */,
 				5E6D170C296EB182002DC74A /* StatusView.swift in Sources */,
 				5E6D16F3296EA7C8002DC74A /* FindMySyncApp.swift in Sources */,
+				5ED2AA782976F8A400BA9EA3 /* ExtrasView.swift in Sources */,
 				5E6D1712296F2A05002DC74A /* AppDelegate.swift in Sources */,
 				5E6D1710296EB1B2002DC74A /* ServerEndpointView.swift in Sources */,
-				5E6D1702296EA86F002DC74A /* SidebarView.swift in Sources */,
+				5E6D1702296EA86F002DC74A /* AppView.swift in Sources */,
 				5E6D1706296EA8DE002DC74A /* HomeView.swift in Sources */,
+				5ED2AA762976F7D400BA9EA3 /* Controls.swift in Sources */,
 				5E6D1708296EAD12002DC74A /* AboutView.swift in Sources */,
 				5E6D1704296EA8B7002DC74A /* Screen.swift in Sources */,
+				5ED2AA7A2976FC7700BA9EA3 /* Synchronizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +378,7 @@
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "20230117-2027";
 				DEVELOPMENT_ASSET_PATHS = "\"FindMySync/Preview Content\"";
 				DEVELOPMENT_TEAM = 773S526Y9K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -396,7 +408,7 @@
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "20230117-2027";
 				DEVELOPMENT_ASSET_PATHS = "\"FindMySync/Preview Content\"";
 				DEVELOPMENT_TEAM = 773S526Y9K;
 				ENABLE_HARDENED_RUNTIME = YES;
