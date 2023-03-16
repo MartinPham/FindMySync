@@ -200,8 +200,12 @@ findmy_\(id.replacingOccurrences(of: "-", with: "")):
     
     func updateEntity(id: String, latitude: NSNumber, longitude: NSNumber, accuracy: NSNumber, battery: NSNumber) {
         let url: String = UserDefaults.standard.string(forKey: "endpoint_url")!
-        let auth: String = UserDefaults.standard.string(forKey: "endpoint_auth")!
+        var auth: String = UserDefaults.standard.string(forKey: "endpoint_auth")!
         
+        if !auth.hasPrefix("Bearer") {
+            auth = "Bearer " + auth
+        }
+
         
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
