@@ -14,6 +14,7 @@ class Synchronizer {
     var clearLog: () -> Void
     var onAccessDenied: () -> Void
     var timer: Timer?
+    var retried: Int = 0
     
     static let shared = Synchronizer(
         log: { message in
@@ -54,7 +55,14 @@ class Synchronizer {
                 if let app = Application.allForBundleID("com.apple.findmy").first {
                     log("Found FindMy app, gonna hide it")
                     do {
-                        try app.setAttribute(.hidden, value: true)
+//                        try app.setAttribute(.hidden, value: true)
+                        
+                        try app.windows()?.first?.setAttribute(.size, value: CGSize(width: 0, height: 0))
+                        
+                        if let mainScreen = NSScreen.main {
+                            try app.windows()?.first?.setAttribute(.position, value: CGPoint(x: mainScreen.visibleFrame.width, y: mainScreen.visibleFrame.height))
+                        }
+                        
                     } catch {
                         log("Cannot hide FindMy app: \(error)")
                     }
@@ -173,8 +181,14 @@ findmy_\(id.replacingOccurrences(of: "-", with: "")):
         }
         
         if !hasAccess {
-            onAccessDenied()
+            if (retried < 3) {
+                retried += 1
+                log("Cannot access FindMy Data, will retry");
+            } else {
+                onAccessDenied()
+            }
         } else {
+            retried = 0
             if generate_config {
                 log("")
                 log("------ known_devices.yaml ------")
