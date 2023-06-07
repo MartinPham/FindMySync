@@ -48,23 +48,22 @@ struct AboutView: View {
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         .backport.Text_bold()
                     HStack {
-                        Link(destination: URL(string: "https://www.martinpham.com")!) {
+                        BackportLink(destination: URL(string: "https://www.martinpham.com")!) {
                             Image("web").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                         }
-                        Link(destination: URL(string: "https://gitlab.com/martinpham")!) {
+                        BackportLink(destination: URL(string: "https://gitlab.com/martinpham")!) {
                             Image("gitlab").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                         }
-                        Link(destination: URL(string: "https://github.com/martinpham")!) {
+                        BackportLink(destination: URL(string: "https://github.com/martinpham")!) {
                             Image("github").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                         }
-                        Link(destination: URL(string: "https://hub.docker.com/u/martinpham")!) {
+                        BackportLink(destination: URL(string: "https://hub.docker.com/u/martinpham")!) {
                             Image("docker").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                         }
                     }
                     Spacer()
                 }
             }
-            .navigationTitle("Who am I?")
             Spacer()
         }
     }

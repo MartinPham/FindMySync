@@ -41,7 +41,7 @@ struct ExtrasView: View {
                         UserDefaults.standard.set(hide_findmy_app, forKey: "extra_hide_findmy_app")
                         
                         if hide_findmy_app {
-                            UIElement.isProcessTrusted(withPrompt: true)
+                            _ = UIElement.isProcessTrusted(withPrompt: true)
                         }
                         
                     }
@@ -60,7 +60,6 @@ struct ExtrasView: View {
             }
             .padding()
         }
-        .navigationTitle("Datasources setting")
         
     }
 }

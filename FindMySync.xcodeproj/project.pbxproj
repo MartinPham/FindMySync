@@ -3,140 +3,157 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4741E89893914176A646F72E /* Pods_FindMySync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29000E8294555A8003C32C6C /* Pods_FindMySync.framework */; };
-		5E6D16F3296EA7C8002DC74A /* FindMySyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D16F2296EA7C8002DC74A /* FindMySyncApp.swift */; };
-		5E6D16F7296EA7CA002DC74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D16F6296EA7CA002DC74A /* Assets.xcassets */; };
-		5E6D16FA296EA7CA002DC74A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D16F9296EA7CA002DC74A /* Preview Assets.xcassets */; };
-		5E6D1702296EA86F002DC74A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1701296EA86F002DC74A /* AppView.swift */; };
-		5E6D1704296EA8B7002DC74A /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1703296EA8B7002DC74A /* Screen.swift */; };
-		5E6D1706296EA8DE002DC74A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1705296EA8DE002DC74A /* HomeView.swift */; };
-		5E6D1708296EAD12002DC74A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1707296EAD12002DC74A /* AboutView.swift */; };
-		5E6D170C296EB182002DC74A /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D170B296EB182002DC74A /* StatusView.swift */; };
-		5E6D170E296EB19E002DC74A /* DatasourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D170D296EB19E002DC74A /* DatasourcesView.swift */; };
-		5E6D1710296EB1B2002DC74A /* ServerEndpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */; };
-		5E6D1712296F2A05002DC74A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D1711296F2A05002DC74A /* AppDelegate.swift */; };
-		5ED2AA762976F7D400BA9EA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA752976F7D400BA9EA3 /* Extensions.swift */; };
-		5ED2AA782976F8A400BA9EA3 /* ExtrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */; };
-		5ED2AA7A2976FC7700BA9EA3 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */; };
+		5E024ABE2A30B4BD00A204D4 /* ExtrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB22A30B4BD00A204D4 /* ExtrasView.swift */; };
+		5E024ABF2A30B4BD00A204D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB32A30B4BD00A204D4 /* AboutView.swift */; };
+		5E024AC02A30B4BD00A204D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB42A30B4BD00A204D4 /* HomeView.swift */; };
+		5E024AC22A30B4BD00A204D4 /* DatasourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB62A30B4BD00A204D4 /* DatasourcesView.swift */; };
+		5E024AC32A30B4BD00A204D4 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB72A30B4BD00A204D4 /* StatusView.swift */; };
+		5E024AC42A30B4BD00A204D4 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */; };
+		5E024AC52A30B4BD00A204D4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB92A30B4BD00A204D4 /* Screen.swift */; };
+		5E024AC62A30B4BD00A204D4 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABA2A30B4BD00A204D4 /* Extras.swift */; };
+		5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABB2A30B4BD00A204D4 /* AppView.swift */; };
+		5E024AC82A30B4BD00A204D4 /* Backport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABC2A30B4BD00A204D4 /* Backport.swift */; };
+		5E024AC92A30B4BD00A204D4 /* ServerEndpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABD2A30B4BD00A204D4 /* ServerEndpointView.swift */; };
+		5E024ACB2A30BC8C00A204D4 /* AppMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */; };
+		5E024ACE2A30BCFE00A204D4 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACD2A30BCFE00A204D4 /* CheckboxView.swift */; };
+		5E024AD02A30BD1700A204D4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACF2A30BD1700A204D4 /* TextFieldView.swift */; };
+		5E9B19B02A30AEA000E47460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B19AF2A30AEA000E47460 /* AppDelegate.swift */; };
+		5E9B19B42A30AEA200E47460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9B19B32A30AEA200E47460 /* Assets.xcassets */; };
+		5E9B19BA2A30AEA200E47460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9B19B82A30AEA200E47460 /* Main.storyboard */; };
+		C3E88133A0D4E82234F63DE9 /* Pods_FindMySync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BE1C06FB0AE559ED7113C5 /* Pods_FindMySync.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		199C0FA30BDD784AC2C6E3BC /* Pods-FindMySync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMySync.release.xcconfig"; path = "Target Support Files/Pods-FindMySync/Pods-FindMySync.release.xcconfig"; sourceTree = "<group>"; };
-		29000E8294555A8003C32C6C /* Pods_FindMySync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMySync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E6D16EF296EA7C8002DC74A /* FindMySync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMySync.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E6D16F2296EA7C8002DC74A /* FindMySyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMySyncApp.swift; sourceTree = "<group>"; };
-		5E6D16F6296EA7CA002DC74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5E6D16F9296EA7CA002DC74A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5E6D16FB296EA7CA002DC74A /* FindMySync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindMySync.entitlements; sourceTree = "<group>"; };
-		5E6D1701296EA86F002DC74A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		5E6D1703296EA8B7002DC74A /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		5E6D1705296EA8DE002DC74A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		5E6D1707296EAD12002DC74A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		5E6D170B296EB182002DC74A /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
-		5E6D170D296EB19E002DC74A /* DatasourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourcesView.swift; sourceTree = "<group>"; };
-		5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpointView.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		5E6D1711296F2A05002DC74A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E6FFFF52A307DBB00CD0CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5ED2AA752976F7D400BA9EA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasView.swift; sourceTree = "<group>"; };
-		5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
-		DABEC7713A8DDB09DD8D1E13 /* Pods-FindMySync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMySync.debug.xcconfig"; path = "Target Support Files/Pods-FindMySync/Pods-FindMySync.debug.xcconfig"; sourceTree = "<group>"; };
+		334B35A36F5E872554F37AB1 /* Pods-FindMySync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMySync.debug.xcconfig"; path = "Target Support Files/Pods-FindMySync/Pods-FindMySync.debug.xcconfig"; sourceTree = "<group>"; };
+		5E024AB22A30B4BD00A204D4 /* ExtrasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasView.swift; sourceTree = "<group>"; };
+		5E024AB32A30B4BD00A204D4 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		5E024AB42A30B4BD00A204D4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5E024AB62A30B4BD00A204D4 /* DatasourcesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasourcesView.swift; sourceTree = "<group>"; };
+		5E024AB72A30B4BD00A204D4 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
+		5E024AB92A30B4BD00A204D4 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		5E024ABA2A30B4BD00A204D4 /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
+		5E024ABB2A30B4BD00A204D4 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		5E024ABC2A30B4BD00A204D4 /* Backport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backport.swift; sourceTree = "<group>"; };
+		5E024ABD2A30B4BD00A204D4 /* ServerEndpointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEndpointView.swift; sourceTree = "<group>"; };
+		5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuView.swift; sourceTree = "<group>"; };
+		5E024ACD2A30BCFE00A204D4 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		5E024ACF2A30BD1700A204D4 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		5E9B19AC2A30AEA000E47460 /* FindMySync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMySync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9B19AF2A30AEA000E47460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E9B19B32A30AEA200E47460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E9B19B92A30AEA200E47460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E9B19BB2A30AEA200E47460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E9B19BC2A30AEA200E47460 /* FindMySync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindMySync.entitlements; sourceTree = "<group>"; };
+		B0BE1C06FB0AE559ED7113C5 /* Pods_FindMySync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMySync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62B2E23B46C72AA49796F3C /* Pods-FindMySync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMySync.release.xcconfig"; path = "Target Support Files/Pods-FindMySync/Pods-FindMySync.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E6D16EC296EA7C8002DC74A /* Frameworks */ = {
+		5E9B19A92A30AEA000E47460 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4741E89893914176A646F72E /* Pods_FindMySync.framework in Frameworks */,
+				C3E88133A0D4E82234F63DE9 /* Pods_FindMySync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AC57CF90FB0CA6E1C949287 /* Pods */ = {
+		0762CEAA22AF3E1D8669BD63 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DABEC7713A8DDB09DD8D1E13 /* Pods-FindMySync.debug.xcconfig */,
-				199C0FA30BDD784AC2C6E3BC /* Pods-FindMySync.release.xcconfig */,
+				334B35A36F5E872554F37AB1 /* Pods-FindMySync.debug.xcconfig */,
+				C62B2E23B46C72AA49796F3C /* Pods-FindMySync.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5402B4F4419B63CFFB6C1E9C /* Frameworks */ = {
+		5E024ACC2A30BCDA00A204D4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				29000E8294555A8003C32C6C /* Pods_FindMySync.framework */,
+				5E024AB92A30B4BD00A204D4 /* Screen.swift */,
+				5E024AB42A30B4BD00A204D4 /* HomeView.swift */,
+				5E024AB72A30B4BD00A204D4 /* StatusView.swift */,
+				5E024AB62A30B4BD00A204D4 /* DatasourcesView.swift */,
+				5E024ABD2A30B4BD00A204D4 /* ServerEndpointView.swift */,
+				5E024AB22A30B4BD00A204D4 /* ExtrasView.swift */,
+				5E024AB32A30B4BD00A204D4 /* AboutView.swift */,
 			);
-			name = Frameworks;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		5E6D16E6296EA7C8002DC74A = {
+		5E024AD22A30BD5100A204D4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5E6D16F1296EA7C8002DC74A /* FindMySync */,
-				5E6D16F0296EA7C8002DC74A /* Products */,
-				1AC57CF90FB0CA6E1C949287 /* Pods */,
-				5402B4F4419B63CFFB6C1E9C /* Frameworks */,
+				5E024ABC2A30B4BD00A204D4 /* Backport.swift */,
+				5E024ACF2A30BD1700A204D4 /* TextFieldView.swift */,
+				5E024ACD2A30BCFE00A204D4 /* CheckboxView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5E9B19A32A30AEA000E47460 = {
+			isa = PBXGroup;
+			children = (
+				5E9B19AE2A30AEA000E47460 /* FindMySync */,
+				5E9B19AD2A30AEA000E47460 /* Products */,
+				0762CEAA22AF3E1D8669BD63 /* Pods */,
+				E18C7EC07FF4EE7C7C6EE2EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		5E6D16F0296EA7C8002DC74A /* Products */ = {
+		5E9B19AD2A30AEA000E47460 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E6D16EF296EA7C8002DC74A /* FindMySync.app */,
+				5E9B19AC2A30AEA000E47460 /* FindMySync.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E6D16F1296EA7C8002DC74A /* FindMySync */ = {
+		5E9B19AE2A30AEA000E47460 /* FindMySync */ = {
 			isa = PBXGroup;
 			children = (
-				5E6FFFF52A307DBB00CD0CEB /* Info.plist */,
-				5E6D1711296F2A05002DC74A /* AppDelegate.swift */,
-				5E6D16F2296EA7C8002DC74A /* FindMySyncApp.swift */,
-				5E6D1703296EA8B7002DC74A /* Screen.swift */,
-				5E6D1701296EA86F002DC74A /* AppView.swift */,
-				5E6D1705296EA8DE002DC74A /* HomeView.swift */,
-				5E6D170B296EB182002DC74A /* StatusView.swift */,
-				5E6D170D296EB19E002DC74A /* DatasourcesView.swift */,
-				5ED2AA772976F8A400BA9EA3 /* ExtrasView.swift */,
-				5E6D170F296EB1B2002DC74A /* ServerEndpointView.swift */,
-				5ED2AA752976F7D400BA9EA3 /* Extensions.swift */,
-				5E6D1707296EAD12002DC74A /* AboutView.swift */,
-				5ED2AA792976FC7700BA9EA3 /* Synchronizer.swift */,
-				5E6D16F6296EA7CA002DC74A /* Assets.xcassets */,
-				5E6D16FB296EA7CA002DC74A /* FindMySync.entitlements */,
-				5E6D16F8296EA7CA002DC74A /* Preview Content */,
+				5E9B19AF2A30AEA000E47460 /* AppDelegate.swift */,
+				5E024ABB2A30B4BD00A204D4 /* AppView.swift */,
+				5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */,
+				5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */,
+				5E024AD22A30BD5100A204D4 /* Components */,
+				5E024ACC2A30BCDA00A204D4 /* Screens */,
+				5E024ABA2A30B4BD00A204D4 /* Extras.swift */,
+				5E9B19B32A30AEA200E47460 /* Assets.xcassets */,
+				5E9B19B82A30AEA200E47460 /* Main.storyboard */,
+				5E9B19BB2A30AEA200E47460 /* Info.plist */,
+				5E9B19BC2A30AEA200E47460 /* FindMySync.entitlements */,
 			);
 			path = FindMySync;
 			sourceTree = "<group>";
 		};
-		5E6D16F8296EA7CA002DC74A /* Preview Content */ = {
+		E18C7EC07FF4EE7C7C6EE2EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E6D16F9296EA7CA002DC74A /* Preview Assets.xcassets */,
+				B0BE1C06FB0AE559ED7113C5 /* Pods_FindMySync.framework */,
 			);
-			path = "Preview Content";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5E6D16EE296EA7C8002DC74A /* FindMySync */ = {
+		5E9B19AB2A30AEA000E47460 /* FindMySync */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E6D16FE296EA7CA002DC74A /* Build configuration list for PBXNativeTarget "FindMySync" */;
+			buildConfigurationList = 5E9B19BF2A30AEA200E47460 /* Build configuration list for PBXNativeTarget "FindMySync" */;
 			buildPhases = (
-				1E6C60372A03BF3B9DAFF539 /* [CP] Check Pods Manifest.lock */,
-				5E6D16EB296EA7C8002DC74A /* Sources */,
-				5E6D16EC296EA7C8002DC74A /* Frameworks */,
-				5E6D16ED296EA7C8002DC74A /* Resources */,
-				D551FE322FE82025D22514C0 /* [CP] Embed Pods Frameworks */,
+				8710FDC8D5AA9E76429AFD63 /* [CP] Check Pods Manifest.lock */,
+				5E9B19A82A30AEA000E47460 /* Sources */,
+				5E9B19A92A30AEA000E47460 /* Frameworks */,
+				5E9B19AA2A30AEA000E47460 /* Resources */,
+				8A4D479C08FC03E3875455BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,56 +161,55 @@
 			);
 			name = FindMySync;
 			productName = FindMySync;
-			productReference = 5E6D16EF296EA7C8002DC74A /* FindMySync.app */;
+			productReference = 5E9B19AC2A30AEA000E47460 /* FindMySync.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5E6D16E7296EA7C8002DC74A /* Project object */ = {
+		5E9B19A42A30AEA000E47460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					5E6D16EE296EA7C8002DC74A = {
-						CreatedOnToolsVersion = 14.2;
+					5E9B19AB2A30AEA000E47460 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 5E6D16EA296EA7C8002DC74A /* Build configuration list for PBXProject "FindMySync" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = 5E9B19A72A30AEA000E47460 /* Build configuration list for PBXProject "FindMySync" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 5E6D16E6296EA7C8002DC74A;
-			productRefGroup = 5E6D16F0296EA7C8002DC74A /* Products */;
+			mainGroup = 5E9B19A32A30AEA000E47460;
+			productRefGroup = 5E9B19AD2A30AEA000E47460 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5E6D16EE296EA7C8002DC74A /* FindMySync */,
+				5E9B19AB2A30AEA000E47460 /* FindMySync */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5E6D16ED296EA7C8002DC74A /* Resources */ = {
+		5E9B19AA2A30AEA000E47460 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6D16FA296EA7CA002DC74A /* Preview Assets.xcassets in Resources */,
-				5E6D16F7296EA7CA002DC74A /* Assets.xcassets in Resources */,
+				5E9B19BA2A30AEA200E47460 /* Main.storyboard in Resources */,
+				5E9B19B42A30AEA200E47460 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E6C60372A03BF3B9DAFF539 /* [CP] Check Pods Manifest.lock */ = {
+		8710FDC8D5AA9E76429AFD63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,7 +231,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D551FE322FE82025D22514C0 /* [CP] Embed Pods Frameworks */ = {
+		8A4D479C08FC03E3875455BE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,35 +251,50 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5E6D16EB296EA7C8002DC74A /* Sources */ = {
+		5E9B19A82A30AEA000E47460 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6D170E296EB19E002DC74A /* DatasourcesView.swift in Sources */,
-				5E6D170C296EB182002DC74A /* StatusView.swift in Sources */,
-				5E6D16F3296EA7C8002DC74A /* FindMySyncApp.swift in Sources */,
-				5ED2AA782976F8A400BA9EA3 /* ExtrasView.swift in Sources */,
-				5E6D1712296F2A05002DC74A /* AppDelegate.swift in Sources */,
-				5E6D1710296EB1B2002DC74A /* ServerEndpointView.swift in Sources */,
-				5E6D1702296EA86F002DC74A /* AppView.swift in Sources */,
-				5E6D1706296EA8DE002DC74A /* HomeView.swift in Sources */,
-				5ED2AA762976F7D400BA9EA3 /* Extensions.swift in Sources */,
-				5E6D1708296EAD12002DC74A /* AboutView.swift in Sources */,
-				5E6D1704296EA8B7002DC74A /* Screen.swift in Sources */,
-				5ED2AA7A2976FC7700BA9EA3 /* Synchronizer.swift in Sources */,
+				5E024ABF2A30B4BD00A204D4 /* AboutView.swift in Sources */,
+				5E024ABE2A30B4BD00A204D4 /* ExtrasView.swift in Sources */,
+				5E024AC32A30B4BD00A204D4 /* StatusView.swift in Sources */,
+				5E024AC22A30B4BD00A204D4 /* DatasourcesView.swift in Sources */,
+				5E024AC82A30B4BD00A204D4 /* Backport.swift in Sources */,
+				5E024AC92A30B4BD00A204D4 /* ServerEndpointView.swift in Sources */,
+				5E024AC62A30B4BD00A204D4 /* Extras.swift in Sources */,
+				5E024ACB2A30BC8C00A204D4 /* AppMenuView.swift in Sources */,
+				5E024AC52A30B4BD00A204D4 /* Screen.swift in Sources */,
+				5E024AC42A30B4BD00A204D4 /* Synchronizer.swift in Sources */,
+				5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */,
+				5E024AD02A30BD1700A204D4 /* TextFieldView.swift in Sources */,
+				5E024ACE2A30BCFE00A204D4 /* CheckboxView.swift in Sources */,
+				5E024AC02A30B4BD00A204D4 /* HomeView.swift in Sources */,
+				5E9B19B02A30AEA000E47460 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		5E9B19B82A30AEA200E47460 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E9B19B92A30AEA200E47460 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		5E6D16FC296EA7CA002DC74A /* Debug */ = {
+		5E9B19BD2A30AEA200E47460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -307,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -317,13 +348,14 @@
 			};
 			name = Debug;
 		};
-		5E6D16FD296EA7CA002DC74A /* Release */ = {
+		5E9B19BE2A30AEA200E47460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -361,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -370,64 +402,54 @@
 			};
 			name = Release;
 		};
-		5E6D16FF296EA7CA002DC74A /* Debug */ = {
+		5E9B19C02A30AEA200E47460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DABEC7713A8DDB09DD8D1E13 /* Pods-FindMySync.debug.xcconfig */;
+			baseConfigurationReference = 334B35A36F5E872554F37AB1 /* Pods-FindMySync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "20230606-2155";
-				DEVELOPMENT_ASSET_PATHS = "\"FindMySync/Preview Content\"";
-				DEVELOPMENT_TEAM = 773S526Y9K;
-				ENABLE_HARDENED_RUNTIME = YES;
+				CURRENT_PROJECT_VERSION = "20230609-2012";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindMySync/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleDisplayName = FindMySync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mph.am.FindMySync.FindMySync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		5E6D1700296EA7CA002DC74A /* Release */ = {
+		5E9B19C12A30AEA200E47460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 199C0FA30BDD784AC2C6E3BC /* Pods-FindMySync.release.xcconfig */;
+			baseConfigurationReference = C62B2E23B46C72AA49796F3C /* Pods-FindMySync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "20230606-2155";
-				DEVELOPMENT_ASSET_PATHS = "\"FindMySync/Preview Content\"";
-				DEVELOPMENT_TEAM = 773S526Y9K;
-				ENABLE_HARDENED_RUNTIME = YES;
+				CURRENT_PROJECT_VERSION = "20230609-2012";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindMySync/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleDisplayName = FindMySync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mph.am.FindMySync.FindMySync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -435,25 +457,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5E6D16EA296EA7C8002DC74A /* Build configuration list for PBXProject "FindMySync" */ = {
+		5E9B19A72A30AEA000E47460 /* Build configuration list for PBXProject "FindMySync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E6D16FC296EA7CA002DC74A /* Debug */,
-				5E6D16FD296EA7CA002DC74A /* Release */,
+				5E9B19BD2A30AEA200E47460 /* Debug */,
+				5E9B19BE2A30AEA200E47460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E6D16FE296EA7CA002DC74A /* Build configuration list for PBXNativeTarget "FindMySync" */ = {
+		5E9B19BF2A30AEA200E47460 /* Build configuration list for PBXNativeTarget "FindMySync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E6D16FF296EA7CA002DC74A /* Debug */,
-				5E6D1700296EA7CA002DC74A /* Release */,
+				5E9B19C02A30AEA200E47460 /* Debug */,
+				5E9B19C12A30AEA200E47460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5E6D16E7296EA7C8002DC74A /* Project object */;
+	rootObject = 5E9B19A42A30AEA000E47460 /* Project object */;
 }

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AXSwift
 import UniformTypeIdentifiers
 
 struct DatasourcesView: View {
@@ -43,7 +42,6 @@ struct DatasourcesView: View {
             }
             .padding()
         }
-        .navigationTitle("Datasources setting")
         
     }
 }

@@ -38,6 +38,5 @@ struct ServerEndpointView: View {
             }
             .padding()
         }
-        .navigationTitle("Endpoint setting")
     }
 }

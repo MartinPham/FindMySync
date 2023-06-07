@@ -121,7 +121,7 @@ findmy_\(id.replacingOccurrences(of: "-", with: "")):
                     }
                 }
             } catch {
-                log("Cannot read Items file:" + error.localizedDescription);
+                log("Cannot read Items file: " + error.localizedDescription);
                 hasAccess = false
             }
         }
@@ -175,13 +175,13 @@ findmy_\(id.replacingOccurrences(of: "-", with: "")):
                     }
                 }
             } catch {
-                log("Cannot read Items file:" + error.localizedDescription);
+                log("Cannot read Items file: " + error.localizedDescription);
                 hasAccess = false
             }
         }
         
         if !hasAccess {
-            if (retried < 3) {
+            if (retried < 1) {
                 retried += 1
                 log("Cannot access FindMy Data, will retry");
             } else {

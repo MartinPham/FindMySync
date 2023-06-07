@@ -28,7 +28,7 @@ struct HomeView: View {
             
             
             Button(action: {
-                onDiscoverClick()
+                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
             }){
             Text("Discover")
                 .foregroundColor(.white)
@@ -41,17 +41,6 @@ struct HomeView: View {
             
         }
         
-        .navigationTitle(title())
-        .toolbar {
-            Button(action: {
-                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
-            }) {
-                HStack {
-                    Image(systemName: "questionmark.circle")
-                    Text("Help")
-                }
-            }
-        }
     }
     
     func title() -> String {
@@ -62,6 +51,7 @@ struct HomeView: View {
     }
 }
 
+
 struct FeatureView: View {
     var image: String
     var imageColor: Color
@@ -71,13 +61,15 @@ struct FeatureView: View {
     var body: some View {
         HStack(alignment: .center) {
             HStack {
-                Image(systemName: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .font(.system(size: 50))
-                    .frame(width: 50)
-                    .foregroundColor(imageColor)
-                    .padding()
+                if #available(macOS 11.0, *) {
+                    Image(systemName: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .font(.system(size: 50))
+                        .frame(width: 50)
+                        .foregroundColor(imageColor)
+                        .padding()
+                }
 
                 VStack(alignment: .leading) {
                     Text(title).bold()
