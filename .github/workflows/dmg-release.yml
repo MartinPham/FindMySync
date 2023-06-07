@@ -2,7 +2,8 @@ name: Fastlane DMG Release
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
 
 permissions: write-all
 
