@@ -74,20 +74,7 @@ struct AppView: View {
             }
         }
         .onAppear(perform: onAppear)
-        .confirmationDialog("Ops! I can't read FindMy data", isPresented: $fileAccessDialogShowing) {
-            Button("Grant permissions") {
-                fileAccessDialogShowing = false
-                directoryDialogShowing = true
-            }
-            Button("Help") {
-                NSWorkspace.shared.open(URL(string: "https://www.martinpham.com/findmysync/")!)
-            }
-            Button("Cancel", role: .cancel) {
-                fileAccessDialogShowing = false
-            }
-        } message: {
-            Text("Please give me permessions to access ~/Library/Caches/com.apple.findmy.fmipcore")
-        }
+        
         .fileImporter(isPresented: $directoryDialogShowing, allowedContentTypes: [UTType.folder]) { result in
             switch result {
             case .success(let url):
@@ -133,7 +120,6 @@ struct AppView: View {
     
 }
 
-// Toggle Sidebar Function
 func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }

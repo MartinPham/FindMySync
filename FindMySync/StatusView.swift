@@ -15,10 +15,10 @@ struct StatusView: View {
                     ScrollView {
                         Text(logs)
                             .font(.custom("Courier", size: 14))
-                            .textSelection(.enabled)
                             .lineSpacing(12)
                             .lineLimit(nil)
                             .frame(width: geometry.size.width)
+                            .backport.Text_textSelection_enabled()
                     }
                 }
         .padding()

@@ -45,8 +45,8 @@ struct AboutView: View {
                         .multilineTextAlignment(.center)
                     Text("Interested? Check my stuffs here")
                         .multilineTextAlignment(.center)
-//                        .bold()
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        .backport.Text_bold()
                     HStack {
                         Link(destination: URL(string: "https://www.martinpham.com")!) {
                             Image("web").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
