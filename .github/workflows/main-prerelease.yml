@@ -1,0 +1,48 @@
+name: Fastlane DMG Release
+
+on:
+  push:
+    branches: 
+      - main
+
+permissions: write-all
+
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Release MacOS app with Fastlane
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+
+      - uses: actions/cache@v3
+        with:
+          path: Pods
+          key: ${{ runner.os }}-Pods-${{ hashFiles('./Podfile.lock') }}
+
+
+      - uses: maierj/fastlane-action@v3.0.0
+        with:
+          lane: 'release'
+      
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            build/FindMySync.app.dmg
