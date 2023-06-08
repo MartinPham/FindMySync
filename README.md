@@ -43,9 +43,9 @@
 
 ## **Features**
 
-- Supports both devices and items data, including iPhones, iPads, Airtags,...
-- Synchronize data with a custom endpoint, with Authorization header
-- Support macOS Catalina 10.15 - Ventura 13.4
+- Supporting both Devices and Items data, including iPhones, iPads, Airtags,...
+- Synchronizing data with a custom endpoint, with Authorization header
+- Supporting macOS Catalina 10.15 - Ventura 13.4
 - ...
 
 **To suggest anything, please join our [Discussion board](https://github.com/MartinPham/FindMySync/discussions).**
