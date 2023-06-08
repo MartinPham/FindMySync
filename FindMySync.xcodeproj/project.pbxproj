@@ -18,7 +18,7 @@
 		5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABB2A30B4BD00A204D4 /* AppView.swift */; };
 		5E024AC82A30B4BD00A204D4 /* Backport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABC2A30B4BD00A204D4 /* Backport.swift */; };
 		5E024AC92A30B4BD00A204D4 /* ServerEndpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABD2A30B4BD00A204D4 /* ServerEndpointView.swift */; };
-		5E024ACB2A30BC8C00A204D4 /* AppMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */; };
+		5E024ACB2A30BC8C00A204D4 /* AppBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACA2A30BC8C00A204D4 /* AppBaseView.swift */; };
 		5E024ACE2A30BCFE00A204D4 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACD2A30BCFE00A204D4 /* CheckboxView.swift */; };
 		5E024AD02A30BD1700A204D4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ACF2A30BD1700A204D4 /* TextFieldView.swift */; };
 		5E9B19B02A30AEA000E47460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B19AF2A30AEA000E47460 /* AppDelegate.swift */; };
@@ -40,7 +40,7 @@
 		5E024ABB2A30B4BD00A204D4 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		5E024ABC2A30B4BD00A204D4 /* Backport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backport.swift; sourceTree = "<group>"; };
 		5E024ABD2A30B4BD00A204D4 /* ServerEndpointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEndpointView.swift; sourceTree = "<group>"; };
-		5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuView.swift; sourceTree = "<group>"; };
+		5E024ACA2A30BC8C00A204D4 /* AppBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseView.swift; sourceTree = "<group>"; };
 		5E024ACD2A30BCFE00A204D4 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		5E024ACF2A30BD1700A204D4 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		5E9B19AC2A30AEA000E47460 /* FindMySync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMySync.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,8 +121,8 @@
 			children = (
 				5E9B19AF2A30AEA000E47460 /* AppDelegate.swift */,
 				5E024ABB2A30B4BD00A204D4 /* AppView.swift */,
+				5E024ACA2A30BC8C00A204D4 /* AppBaseView.swift */,
 				5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */,
-				5E024ACA2A30BC8C00A204D4 /* AppMenuView.swift */,
 				5E024AD22A30BD5100A204D4 /* Components */,
 				5E024ACC2A30BCDA00A204D4 /* Screens */,
 				5E024ABA2A30B4BD00A204D4 /* Extras.swift */,
@@ -262,7 +262,7 @@
 				5E024AC82A30B4BD00A204D4 /* Backport.swift in Sources */,
 				5E024AC92A30B4BD00A204D4 /* ServerEndpointView.swift in Sources */,
 				5E024AC62A30B4BD00A204D4 /* Extras.swift in Sources */,
-				5E024ACB2A30BC8C00A204D4 /* AppMenuView.swift in Sources */,
+				5E024ACB2A30BC8C00A204D4 /* AppBaseView.swift in Sources */,
 				5E024AC52A30B4BD00A204D4 /* Screen.swift in Sources */,
 				5E024AC42A30B4BD00A204D4 /* Synchronizer.swift in Sources */,
 				5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */,
@@ -411,7 +411,7 @@
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "20230609-2012";
+				CURRENT_PROJECT_VERSION = "20230609-2145";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FindMySync/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FindMySync;
@@ -437,7 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = FindMySync/FindMySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "20230609-2012";
+				CURRENT_PROJECT_VERSION = "20230609-2145";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FindMySync/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FindMySync;

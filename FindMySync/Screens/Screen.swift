@@ -8,5 +8,5 @@
 import Foundation
 
 enum Screen: Hashable {
-   case home, status, data, endpoint, extra, about
+	case home, status, data, endpoint, extra, about
 }
