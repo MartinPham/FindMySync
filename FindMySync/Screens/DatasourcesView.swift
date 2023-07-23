@@ -17,7 +17,7 @@ struct DatasourcesView: View {
 			VStack {
 				CheckboxView(
 					title: "Synchronize Devices data",
-					value: $devices, subtitle: "iPhones, iPads, Macbooks, ...",
+					value: $devices, subtitle: "iPhone, iPad, iPod touch, Mac, and Apple Watch",
 					onChange: {
 						devices.toggle()
 
@@ -30,7 +30,7 @@ struct DatasourcesView: View {
 				CheckboxView(
 					title: "Synchronize Items data",
 					value: $items,
-					subtitle: "Airtags and other tracking items",
+					subtitle: "AirTag, and third-party items",
 					onChange: {
 						items.toggle()
 
