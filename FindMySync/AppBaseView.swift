@@ -83,9 +83,9 @@ struct AppBaseView: View {
 		.backport.View_confirmationDialog(
 			"FindMy data access",
 			message:
-				"FindMySync may need your permessions to access ~/Library/Caches/com.apple.findmy.fmipcore",
+				"FindMySync needs your permission to access ~/Library/Caches/com.apple.findmy.fmipcore",
 			isPresented: $fileAccessDialogShowing,
-			primaryButtonTitle: "Grant permissions",
+			primaryButtonTitle: "Grant Permission",
 			primaryAction: {
 				fileAccessDialogShowing = false
 				directoryDialogShowing = true
