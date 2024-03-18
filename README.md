@@ -45,7 +45,7 @@
 
 - Supporting both Devices and Items data, including iPhones, iPads, Airtags,...
 - Synchronizing data with a custom endpoint, with Authorization header
-- Supporting macOS Catalina 10.15 - Ventura 13.4
+- Supporting macOS Catalina 10.15 - Sonoma 14.4
 - ...
 
 **To suggest anything, please join our [Discussion board](https://github.com/MartinPham/FindMySync/discussions).**
@@ -58,6 +58,11 @@ Check here [martinpham.com/findmysync](https://www.martinpham.com/findmysync/).
 ## **Contributing**
 
 Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and then [open a pull request](https://github.com/MartinPham/FindMySync/compare).
+
+## **Changelog**
+
+- **v1.2 / 20240317-1135**
+  - Add Sonoma 14.4 support (Thanks to [@YeapGuy](https://github.com/YeapGuy) and [@airy10](https://github.com/airy10))
 
 ## **License**
 
