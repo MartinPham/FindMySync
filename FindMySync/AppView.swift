@@ -17,9 +17,47 @@ struct AppView: View {
 	@State var fileAccessDialogShowing = false
 
 	var body: some View {
-		if #available(macOS 11.0, *) {
+		if #available(macOS 14.4, *) {
+            AppBaseView(
+                onAppear: onAppear, dataDirectory: "~/Library/com.apple.icloud.searchpartyd",
+                selection: $selection,
+                logs: $logs,
+                config: $config,
+                directoryDialogShowing: $directoryDialogShowing,
+                fileAccessDialogShowing: $fileAccessDialogShowing
+            )
+            .fileImporter(
+                isPresented: $directoryDialogShowing,
+                allowedContentTypes: [UTType.folder]
+            ) { result in
+                switch result {
+
+                case .success(let url):
+                    guard url.startAccessingSecurityScopedResource() else {
+                        return
+                    }
+
+                    defer { url.stopAccessingSecurityScopedResource() }
+
+                    do {
+                        @AppStorage("bookmarkData") var findmyBookmark =
+                            try url.bookmarkData(
+                                options: .minimalBookmark,
+                                includingResourceValuesForKeys: nil,
+                                relativeTo: nil)
+
+                        Synchronizer.shared.fetchData()
+                    } catch {
+                        log("Bookmark error \(error)")
+                    }
+                case .failure(let error):
+                    log("Importer error: \(error)")
+                }
+                directoryDialogShowing = false
+            }
+        } else if #available(macOS 11.0, *) {
 			AppBaseView(
-				onAppear: onAppear,
+                onAppear: onAppear, dataDirectory: "~/Library/Caches/com.apple.findmy.fmipcore",
 				selection: $selection,
 				logs: $logs,
 				config: $config,
@@ -58,7 +96,7 @@ struct AppView: View {
 
 		} else {
 			AppBaseView(
-				onAppear: onAppear,
+                onAppear: onAppear, dataDirectory: "~/Library/Caches/com.apple.findmy.fmipcore",
 				selection: $selection,
 				logs: $logs,
 				config: $config,

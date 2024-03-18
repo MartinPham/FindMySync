@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AppBaseView: View {
-	var onAppear: () -> Void
+    var onAppear: () -> Void
+	var dataDirectory: String
 	@Binding var selection: Screen?
 	@Binding var logs: String
 	@Binding var config: String
@@ -43,12 +44,16 @@ struct AppBaseView: View {
 					.font(.system(size: 10))
 					.fontWeight(.bold)
 
-				NavigationLink(
-					destination: DatasourcesView(), tag: Screen.data,
-					selection: $selection
-				) {
-					BackportLabel("Data", systemImage: "rectangle.stack")
-				}
+                
+                if #available(macOS 14.4, *) {
+                } else {
+                    NavigationLink(
+                        destination: DatasourcesView(), tag: Screen.data,
+                        selection: $selection
+                    ) {
+                        BackportLabel("Data", systemImage: "rectangle.stack")
+                    }
+                }
 
 				NavigationLink(
 					destination: ServerEndpointView(), tag: Screen.endpoint,
@@ -83,7 +88,7 @@ struct AppBaseView: View {
 		.backport.View_confirmationDialog(
 			"FindMy data access",
 			message:
-				"FindMySync may need your permessions to access ~/Library/Caches/com.apple.findmy.fmipcore",
+				"FindMySync may need your permessions to access \(dataDirectory)",
 			isPresented: $fileAccessDialogShowing,
 			primaryButtonTitle: "Grant permissions",
 			primaryAction: {
