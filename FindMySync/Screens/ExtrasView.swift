@@ -12,8 +12,10 @@ import UniformTypeIdentifiers
 struct ExtrasView: View {
 	@Binding var config: String
 
-	@State private var interval: String = UserDefaults.standard.string(
-		forKey: "extra_interval")!
+    @State private var interval: String = UserDefaults.standard.string(
+        forKey: "extra_interval")!
+    @State private var beacon_key: String = UserDefaults.standard.string(
+        forKey: "extra_beacon_key")!
 	@State private var hide_findmy_app: Bool = UserDefaults.standard.bool(
 		forKey: "extra_hide_findmy_app")
 	@State private var generate_config: Bool = UserDefaults.standard.bool(
@@ -38,6 +40,21 @@ struct ExtrasView: View {
 						Synchronizer.shared.fetchData()
 					}
 				)
+                
+                if #available(macOS 14.4, *) {
+                    TextFieldView(
+                        title: "Beacon decrypt key",
+                        value: $beacon_key,
+                        subtitle: "",
+                        onChange: {
+                            UserDefaults.standard.set(
+                                beacon_key, forKey: "extra_beacon_key")
+
+                            Synchronizer.shared.fetchData()
+                        }
+                    )
+                }
+                
 				CheckboxView(
 					title: "Hide Find My app",
 					value: $hide_findmy_app,

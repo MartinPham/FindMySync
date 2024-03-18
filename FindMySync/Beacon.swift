@@ -15,3 +15,5 @@ struct Beacon {
     var latitude: NSNumber
     var timestamp: Date? = nil
 }
+
+

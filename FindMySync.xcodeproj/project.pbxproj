@@ -125,6 +125,7 @@
 				5E024ABB2A30B4BD00A204D4 /* AppView.swift */,
 				5E024ACA2A30BC8C00A204D4 /* AppBaseView.swift */,
 				5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */,
+				5E711B8D2BA8575B001A8A04 /* Beacon.swift */,
 				5E024AD22A30BD5100A204D4 /* Components */,
 				5E024ACC2A30BCDA00A204D4 /* Screens */,
 				5E024ABA2A30B4BD00A204D4 /* Extras.swift */,
@@ -132,7 +133,6 @@
 				5E9B19B82A30AEA200E47460 /* Main.storyboard */,
 				5E9B19BB2A30AEA200E47460 /* Info.plist */,
 				5E9B19BC2A30AEA200E47460 /* FindMySync.entitlements */,
-				5E711B8D2BA8575B001A8A04 /* Beacon.swift */,
 			);
 			path = FindMySync;
 			sourceTree = "<group>";

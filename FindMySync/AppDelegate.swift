@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import CryptoKit
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var window: NSWindow!
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-
 		UserDefaults.standard.register(
 			defaults: [
 				"sources_devices":
@@ -25,8 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 					"http://homeassistant.local:8123/api/services/device_tracker/see",
 				"endpoint_auth":
 					"Bearer <INSERT TOKEN HERE>",
-				"extra_interval":
-					"5",
+                "extra_interval":
+                    "5",
+				"extra_beacon_key":
+					"",
 				"extra_hide_findmy_app":
 					false,
 				"extra_generate_config":
