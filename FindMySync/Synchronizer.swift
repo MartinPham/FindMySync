@@ -104,6 +104,9 @@ class Synchronizer {
                 var index = genaHexString.startIndex
 
                 while index < genaHexString.endIndex {
+                    guard genaHexString.distance(from: index, to: genaHexString.endIndex) >= 2 else {
+                        break
+                    }
                     let byteString = genaHexString[index..<genaHexString.index(index, offsetBy: 2)]
                     let byte = UInt8(byteString, radix: 16)!
                     data.append(byte)
@@ -165,9 +168,9 @@ class Synchronizer {
                         gena = gena[1].components(separatedBy: "  \"")
 
                         if gena.count > 0 {
-                            var genaHexString = gena[0]
-
                             if gena[0].count > 0 {
+                                var genaHexString = gena[0]
+                                
                                 let data = getKeyData(from: genaHexString)
 
                                 keyData = Data(data)
@@ -181,7 +184,7 @@ class Synchronizer {
                 log("Error: Cannot get Beacon key data.\nPlease try to run the below command on your Terminal, and save the \"gena\" value (it looks like \"0xABCDEF...7890\" without spaces) to the Extras panel.")
                 log("/usr/bin/security find-generic-password -l BeaconStore -g")
             } else {
-                log("Got Beacon key data!! Phewww!")
+                log("Got Beacon key data (\(keyData.count) byte(s))")
 
                 let key = SymmetricKey(data: keyData)
 
@@ -264,6 +267,8 @@ class Synchronizer {
                                         {
                                             beaconNames[identifier] = name
                                         }
+                                    } else {
+                                        log("Error: Cannot decrypt beacon name record \(namingItem.lastPathComponent)")
                                     }
                                 }
                             }
@@ -287,6 +292,8 @@ class Synchronizer {
                                         sharedBeaconMap[identifier] = ownerBeaconIdentifier
                                     }
                                 }
+                            } else {
+                                log("Error: Cannot decrypt shared beacon record \(sharedRecord.lastPathComponent)")
                             }
                         }
                     }
@@ -352,6 +359,8 @@ class Synchronizer {
                                             }
                                             
                                         }
+                                    } else {
+                                        log("Error: Cannot decrypt beacon location record \(locationItem.lastPathComponent)")
                                     }
                                 }
                             }

@@ -61,7 +61,7 @@ Please contribute using [GitHub Flow](https://guides.github.com/introduction/flo
 
 ## **Changelog**
 
-- **v1.2 / 20240317-1135**
+- **v1.2 / 20240318-2212**
   - Add Sonoma 14.4 support (Thanks to [@YeapGuy](https://github.com/YeapGuy) and [@airy10](https://github.com/airy10))
 
 ## **License**
