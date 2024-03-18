@@ -183,8 +183,6 @@ class Synchronizer {
                         "BeaconEstimatedLocation")
                     let sharedBeaconsUrl = searchpartydUrl.appendingPathComponent("SharedBeacons")
 
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
 
                     let fileManager = FileManager.default
 
@@ -232,9 +230,6 @@ class Synchronizer {
                         }
 
                         
-                        print(beaconNames)
-                        print(sharedBeaconMap)
-                        
                         let beaconEstimatedLocations = try fileManager.contentsOfDirectory(
                             at: beaconEstimatedLocationUrl, includingPropertiesForKeys: nil)
                         for subDir in beaconEstimatedLocations {
@@ -268,8 +263,7 @@ class Synchronizer {
                                                 latitude: NSNumber(value: latitude as! Double)
                                             )
 
-                                            if let timestamp = dateFormatter.date(
-                                                from: String(describing: timestamp))
+                                            if let timestamp = timestamp as? Date
                                             {
                                                 beacon.timestamp = timestamp
                                             }
@@ -295,7 +289,6 @@ class Synchronizer {
                                                 beacons[id] = beacon
                                             }
                                             
-                                            print(beacon)
                                         }
                                     }
                                 }
