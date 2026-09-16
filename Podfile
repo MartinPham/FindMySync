@@ -16,5 +16,6 @@ target 'FindMySync' do
   # Pods for FindMySync
 
   pod 'AXSwift'
+  pod 'CocoaMQTT', '~> 2.3'
 
 end

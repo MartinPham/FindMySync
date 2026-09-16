@@ -373,6 +373,7 @@ class Synchronizer {
                         print(identifier, beacon)
                         updateEntity(
                             id: identifier,
+                            name: beacon.name,
                             latitude: beacon.latitude,
                             longitude:
                                 beacon.longitude,
@@ -510,6 +511,7 @@ class Synchronizer {
 
                                         updateEntity(
                                             id: id,
+                                            name: name,
                                             latitude: latitude,
                                             longitude:
                                                 longitude,
@@ -655,6 +657,7 @@ class Synchronizer {
 
                                         updateEntity(
                                             id: id,
+                                            name: name,
                                             latitude: latitude,
                                             longitude:
                                                 longitude,
@@ -703,7 +706,22 @@ class Synchronizer {
         } else {
             retried = 0
             if generate_config {
-                logConfig(haConfig)
+                let transport: String =
+                    UserDefaults.standard.string(forKey: "endpoint_transport") ?? "http"
+
+                if transport == "mqtt" {
+                    logConfig(
+                        """
+                        # Nothing to add to your configuration.
+                        #
+                        # Over MQTT, Home Assistant creates a device_tracker (and a battery
+                        # sensor where the battery level is known) for every FindMy device
+                        # and item through MQTT discovery. Look under Settings > Devices &
+                        # Services > MQTT.
+                        """)
+                } else {
+                    logConfig(haConfig)
+                }
             }
         }
 
@@ -721,9 +739,20 @@ class Synchronizer {
     }
 
     func updateEntity(
-        id: String, latitude: NSNumber, longitude: NSNumber, accuracy: NSNumber,
-        battery: NSNumber, address: String
+        id: String, name: String, latitude: NSNumber, longitude: NSNumber,
+        accuracy: NSNumber, battery: NSNumber, address: String
     ) {
+        let transport: String =
+            UserDefaults.standard.string(forKey: "endpoint_transport") ?? "http"
+
+        if transport == "mqtt" {
+            MQTTPublisher.shared.log = log
+            MQTTPublisher.shared.publish(
+                id: id, name: name, latitude: latitude, longitude: longitude,
+                accuracy: accuracy, battery: battery, address: address)
+            return
+        }
+
         let url: String = UserDefaults.standard.string(forKey: "endpoint_url")!
         let auth: String = UserDefaults.standard.string(forKey: "endpoint_auth")!
 

@@ -45,6 +45,7 @@
 
 - Supporting both Devices and Items data, including iPhones, iPads, Airtags,...
 - Synchronizing data with a custom endpoint, with Authorization header
+- Publishing to Home Assistant over MQTT, with discovery and battery sensors
 - Supporting macOS Catalina 10.15 - Sonoma 14.4
 - ...
 
@@ -53,6 +54,26 @@
 
 ## **Usage**
 Check here [martinpham.com/findmysync](https://www.martinpham.com/findmysync/).
+
+### **Home Assistant over MQTT**
+
+Home Assistant deprecated the `device_tracker.see` action that the HTTP endpoint
+calls, and removes it in **2027.5**. Pick **MQTT (discovery)** on the Server Endpoint
+panel to publish locations to your broker instead.
+
+Fill in the broker host, port and credentials, and Home Assistant creates the entities
+for you - no `known_devices.yaml`, no template configuration. Each FindMy device and
+item becomes a device under *Settings > Devices & Services > MQTT*, carrying:
+
+- a `device_tracker`, whose state Home Assistant resolves from the published
+  coordinates, so zones keep working exactly as they did before
+- a battery `sensor`, for items that report a battery level
+
+Locations are published to `<base topic>/findmy_<id>/state` and discovery
+configuration to `<discovery prefix>/device/findmy_<id>/config`, both retained.
+The app publishes `online` to `<base topic>/status` while it is running, and
+registers a last will so Home Assistant marks the entities unavailable if the Mac
+goes away.
 
 
 ## **Contributing**
