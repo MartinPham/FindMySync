@@ -13,6 +13,7 @@
 		5E024AC22A30B4BD00A204D4 /* DatasourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB62A30B4BD00A204D4 /* DatasourcesView.swift */; };
 		5E024AC32A30B4BD00A204D4 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB72A30B4BD00A204D4 /* StatusView.swift */; };
 		5E024AC42A30B4BD00A204D4 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */; };
+		5E024AD82A30BD5300A204D4 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AD72A30BD5300A204D4 /* DataAccess.swift */; };
 		5E024AC52A30B4BD00A204D4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024AB92A30B4BD00A204D4 /* Screen.swift */; };
 		5E024AC62A30B4BD00A204D4 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABA2A30B4BD00A204D4 /* Extras.swift */; };
 		5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E024ABB2A30B4BD00A204D4 /* AppView.swift */; };
@@ -36,6 +37,7 @@
 		5E024AB62A30B4BD00A204D4 /* DatasourcesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasourcesView.swift; sourceTree = "<group>"; };
 		5E024AB72A30B4BD00A204D4 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
+		5E024AD72A30BD5300A204D4 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		5E024AB92A30B4BD00A204D4 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		5E024ABA2A30B4BD00A204D4 /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		5E024ABB2A30B4BD00A204D4 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				5E024ABB2A30B4BD00A204D4 /* AppView.swift */,
 				5E024ACA2A30BC8C00A204D4 /* AppBaseView.swift */,
 				5E024AB82A30B4BD00A204D4 /* Synchronizer.swift */,
+				5E024AD72A30BD5300A204D4 /* DataAccess.swift */,
 				5E711B8D2BA8575B001A8A04 /* Beacon.swift */,
 				5E024AD22A30BD5100A204D4 /* Components */,
 				5E024ACC2A30BCDA00A204D4 /* Screens */,
@@ -268,6 +271,7 @@
 				5E024ACB2A30BC8C00A204D4 /* AppBaseView.swift in Sources */,
 				5E024AC52A30B4BD00A204D4 /* Screen.swift in Sources */,
 				5E024AC42A30B4BD00A204D4 /* Synchronizer.swift in Sources */,
+				5E024AD82A30BD5300A204D4 /* DataAccess.swift in Sources */,
 				5E024AC72A30B4BD00A204D4 /* AppView.swift in Sources */,
 				5E024AD02A30BD1700A204D4 /* TextFieldView.swift in Sources */,
 				5E024ACE2A30BCFE00A204D4 /* CheckboxView.swift in Sources */,

@@ -30,30 +30,7 @@ struct AppView: View {
                 isPresented: $directoryDialogShowing,
                 allowedContentTypes: [UTType.folder]
             ) { result in
-                switch result {
-
-                case .success(let url):
-                    guard url.startAccessingSecurityScopedResource() else {
-                        return
-                    }
-
-                    defer { url.stopAccessingSecurityScopedResource() }
-
-                    do {
-                        @AppStorage("bookmarkData") var findmyBookmark =
-                            try url.bookmarkData(
-                                options: .minimalBookmark,
-                                includingResourceValuesForKeys: nil,
-                                relativeTo: nil)
-
-                        Synchronizer.shared.fetchData()
-                    } catch {
-                        log("Bookmark error \(error)")
-                    }
-                case .failure(let error):
-                    log("Importer error: \(error)")
-                }
-                directoryDialogShowing = false
+                onDirectoryPicked(result)
             }
         } else if #available(macOS 11.0, *) {
 			AppBaseView(
@@ -68,30 +45,7 @@ struct AppView: View {
 				isPresented: $directoryDialogShowing,
 				allowedContentTypes: [UTType.folder]
 			) { result in
-				switch result {
-
-				case .success(let url):
-					guard url.startAccessingSecurityScopedResource() else {
-						return
-					}
-
-					defer { url.stopAccessingSecurityScopedResource() }
-
-					do {
-						@AppStorage("bookmarkData") var findmyBookmark =
-							try url.bookmarkData(
-								options: .minimalBookmark,
-								includingResourceValuesForKeys: nil,
-								relativeTo: nil)
-
-						Synchronizer.shared.fetchData()
-					} catch {
-						log("Bookmark error \(error)")
-					}
-				case .failure(let error):
-					log("Importer error: \(error)")
-				}
-				directoryDialogShowing = false
+				onDirectoryPicked(result)
 			}
 
 		} else {
@@ -120,6 +74,23 @@ struct AppView: View {
 		self.logs = ""
 	}
 
+	/// Stores the folder the user picked, so the grant survives this launch and
+	/// the next one.
+	func onDirectoryPicked(_ result: Result<URL, Error>) {
+		switch result {
+		case .success(let url):
+			do {
+				try DataAccess.grant(url)
+				Synchronizer.shared.fetchData()
+			} catch {
+				log("Bookmark error \(error)")
+			}
+		case .failure(let error):
+			log("Importer error: \(error)")
+		}
+		directoryDialogShowing = false
+	}
+
 	func onAppear() {
 		Synchronizer.shared.log = log
 		Synchronizer.shared.logConfig = logConfig
@@ -127,6 +98,12 @@ struct AppView: View {
 		Synchronizer.shared.onAccessDenied = {
 			fileAccessDialogShowing = true
 		}
+
+		// Reopen a folder picked on an earlier launch before reading anything.
+		if DataAccess.restore() {
+			log("Restored access to the FindMy folder")
+		}
+
 		Synchronizer.shared.fetchData()
 	}
 
